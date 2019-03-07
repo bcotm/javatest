@@ -20,14 +20,11 @@ public class Student {
        if( this == other){
            return true;
        }
-       if(other instanceof Student){
-           Student otherStudent = (Student) other;
-           if(otherStudent.id == id){
-               return true;
-           }
+       if(!(other instanceof Student)){
            return false;
        }
-       return false;
+       Student otherStudent = (Student)other;
+       return (otherStudent.id.equals(id));
     }
 
     @Override
