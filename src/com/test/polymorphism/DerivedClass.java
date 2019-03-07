@@ -7,23 +7,25 @@ public class DerivedClass extends BaseClass{
         System.out.println("Dynamic Polymorphism.");
     }
 
-    public void toBeOverwrite(String paraOne, float paraTwo){
+    public void toBeOverloaded(String paraOne, float paraTwo){
         System.out.println("Static Polymorphism.");
     }
 
-    public void toBeOverwrite(float paraOne, String paraTwo){
+    public void toBeOverloaded(float paraOne, String paraTwo){
        System.out.println("Different sequence of parameters.");
     }
 
-    public void toBeOverwrite(String paraOne, float paraTwo, int paraThree){
+    public void toBeOverloaded(String paraOne, float paraTwo, int paraThree){
         System.out.println("Different number of parameters.");
     }
 
     public static void main(String[] args){
+        BaseClass baseClass = new DerivedClass();
+        baseClass.toBeOverrided();
         DerivedClass derivedClass = new DerivedClass();
         derivedClass.toBeOverrided();
-        derivedClass.toBeOverwrite("", 0);
-        derivedClass.toBeOverwrite(0, "");
-        derivedClass.toBeOverwrite("", 0, 0);
+        derivedClass.toBeOverloaded("", 0);
+        derivedClass.toBeOverloaded(0, "");
+        derivedClass.toBeOverloaded("", 0, 0);
     }
 }
